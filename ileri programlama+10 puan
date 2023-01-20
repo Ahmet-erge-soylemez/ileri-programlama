@@ -1,0 +1,210 @@
+'''javadaki geriye döndermeyen fonksiyon.'''
+def faktoryel(a):
+    carpim = 1
+    for i in range(1,a+1):
+        carpim = carpim*1
+    print(carpim)
+    return carpim
+
+sayi = int(input("bir sayı giriniz: "))
+
+faktöriyel(sayi)
+
+
+''''import random as rnd
+
+liste1 = []
+for i in range(0,10):
+    sayi=rnd.randint(0,100)
+    liste1.append(sayi)
+
+def ortalama_ustu_bul(liste1):
+    toplam=sum(liste1)
+    eleman_sayisi=len(liste1)
+    ortalama=toplam/eleman_sayisi
+    liste2=[]
+
+    for i in range(0,eleman_sayisi):
+        if liste1[i] > ortalama:
+            liste2.append((liste1[i]))
+
+        return liste2
+print(ortalama_ustu_bul(liste1))
+print(liste1)
+
+
+
+'''
+liste = ["geeksforgeeeks", "geeky", "computers", "algoritmalar"]
+aranan = str(input("bir ifade giriniz"))
+
+def metin_ara(liste,a):
+    liste1= [x for x in liste if aranan in x]
+    return liste1
+
+print(len(metin_ara(liste,aranan)))
+print(metin_ara(liste,aranan))
+
+'''
+
+
+cumle = "belirli bir düzende otomatik listeler oluşturmak için liste üreteçleri kullanılır"
+karakter_sayisi = int(intput("karakter sayısı giriniz: "))
+
+def bul(cumle,a):
+
+    liste=cumle.split(" ")
+    print(liste)
+    for i in liste:
+        if len(i)>7:
+            print(i)
+
+bul(cumle,karakter_sayisi)
+
+
+
+10-20 arası sayılardan oluşan sayilar isimli bir liste oluşturun.
+Oluşturulan liste ile sayilar2=[21,22,23,24,25] listesini birleştirerek 4’e tam
+bölünen sayıları ekrana yazdırınız.
+'''
+sayilar=[10,11,12,13,14,15,16,17,18,19,20]
+sayilar2=[21,22,23,24,25]
+birlestir = sayilar+sayilar2
+for sayi in birlestir:
+if sayi%4==0:
+ print(sayi)
+'''
+
+
+'''Gönderilen 2 sayı arasındaki tüm asal sayıları bulan python fonksiyon uygulamasını yapınız.'''
+def asalSayılariBul(sayi1, sayi2):
+    for sayi in range(sayi1, sayi2+1):
+        if sayi > 1:
+            for i in range(2, sayi):
+                if (sayi % i == 0):
+                    break
+            else:
+                print(sayi)
+
+sayi1 = int(input('sayı 1:'))
+sayi2 = int(input('sayı 2:'))
+
+asalSayılariBul(sayi1, sayi2)
+
+
+'''Kendisine gönderilen bir sayının tam bölenlerini bulan python uygulamasını yapınız.'''
+def tamBolenleriBul(sayi):
+    tamBolenler = []
+
+    for i in range(2, sayi):
+        if (sayi % i == 0):
+            tamBolenler.append(i)    
+
+    return tamBolenler
+
+print(tamBolenleriBul(20))
+
+
+
+'''Fonksiyon kullanarak genişliği ve yüksekliği girilen dikdörtgenin alanını hesaplayan Python programı.'''
+def dikdortgenAlan(genislik, yukseklik):
+    alan = float(genislik) * float(yukseklik)
+    print ("Alan :",alan)
+    return alan
+ 
+gen = input("Genişlik :")
+ 
+yuk = input("Yükseklik : ")
+ 
+dikdortgenAlan(gen, yuk)
+
+
+
+Kullanıcının girdiği 2 sayı arasındaki çift sayıların ortalamasını bulan
+
+def ciftMi(x):
+ return x % 2 == 0
+toplam=0
+sayac=0
+baslangic = input("Başlangıç Sayısı :")
+bitis = input("Bitiş Sayısı :")
+for sayi in range (int(baslangic), int(bitis)+1):
+ if(ciftMi(int(sayi))):
+ toplam=toplam+sayi
+ sayac=sayac+1
+print('Ortalama',(toplam/sayac))
+
+
+
+'''Girilen 2 Sayıdan Büyük Olanı Bulma.'''
+def maxOfTwo (x, y):
+    if x > y:
+        return x
+    return y
+ 
+number1 = int(input("Birinci sayıyı giriniz..."))
+number2 = int(input("İkinci sayıyı giriniz..."))
+ 
+biggerNumber = maxOfTwo(number1, number2)
+print(f"Büyük olan sayı: {biggerNumber}")
+
+
+
+'''Liste İçindeki Sayıların Çarpımını Bulma.'''
+liste = [1, 2, 3, 4, 5, 6]
+def multiply(liste):
+    total = 1
+    for i in liste:
+        total *= i
+    return total
+ 
+ 
+newTotal = multiply([1, 2, 3, 4, 5, 6])
+print(f"Liste içindeki sayıların çarpımı: {newTotal}")
+
+
+'''Liste İçindeki Tekrarlı Değerleri Silme.'''
+liste = [1, 2, 2, 2, 3, 1, 6, 7, 7, 8, 8, 8, 8, 8, 9, 11, 25, 33, 33, 37, 78, 99, 99]
+def tekrar_olanlar_silinsin(sil):
+    return set(sil)
+ 
+ 
+silindi = tekrar_olanlar_silinsin([1, 2, 2, 2, 3, 1, 6, 7, 7, 8, 8, 8, 8, 8, 9, 11, 25, 33, 33, 37, 78, 99, 99])
+print(f"Tekrarlı sayıları silinmiş liste: {silindi}")
+
+
+
+'''Liste İçindeki Sayıların 2 Katını Alıp Listeye Yazdırma.'''
+liste = [1, 2, 3, 4, 5, 6, 7]
+def iki_kat_al(liste):
+    i = 0
+    while i < len(liste):
+        liste[i] = liste[i]*2
+        i += 1
+    return liste
+ 
+ 
+yeni_liste = iki_kat_al([1, 2, 3, 4, 5, 6, 7])
+print (f"Yeni liste: {yeni_liste}")
+
+
+
+'''Ardından bu listede bulunan çift sayıları ekrana yazdırınız.'''
+sayilar=[10,11,12,13,14,15,16,17,18,19,20]
+for sayi in sayilar:
+if sayi%2==0:
+ print(sayi)
+
+
+
+'''UsAl isimli bir fonksiyon.'''
+def UsAl(sayi,us):
+    sonuc=1
+    for i in range(us):
+        sonuc=sonuc*sayi
+    return sonuc
+ 
+s=int(input('Sayıyı Gir : '))
+u=int(input('Üs Gir : '))
+print (UsAl(s,u))
+'''
